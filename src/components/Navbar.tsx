@@ -17,6 +17,7 @@ export const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Collections", href: "/collections" },
     { name: "Bridal", href: "/bridal" },
+    { name: "Lookbook", href: "/lookbook" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];

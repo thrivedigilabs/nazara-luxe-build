@@ -8,75 +8,46 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* Pure black background for luxury aesthetic */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Luxe gold for primary brand color */
-    --primary: 43 100% 50%;
-    --primary-foreground: 0 0% 100%;
+    /* Luxe gold primary */
+    --primary: 43 96% 56%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 10% 3.9%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 43 100% 50%;
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 43 96% 56%;
 
     --radius: 0.5rem;
 
     /* Gold gradient */
-    --gradient-gold: linear-gradient(135deg, hsl(43 100% 50%), hsl(36 100% 50%));
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 56%), hsl(38 92% 50%));
     
     /* Luxury shadow */
-    --shadow-luxury: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --shadow-luxury: 0 20px 60px rgba(0, 0, 0, 0.5);
     
     /* Smooth transition */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 43 100% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 43 100% 50%;
   }
 }
 
@@ -91,7 +62,7 @@ All colors MUST be HSL.
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
   }
 }
 
