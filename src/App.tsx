@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Collections from "./pages/Collections";
 import ProductDetail from "./pages/ProductDetail";
 import Bridal from "./pages/Bridal";
+import Lookbook from "./pages/Lookbook";
 import Wishlist from "./pages/Wishlist";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/collections" element={<Collections />} />
           <Route path="/product/:handle" element={<ProductDetail />} />
           <Route path="/bridal" element={<Bridal />} />
+          <Route path="/lookbook" element={<Lookbook />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />

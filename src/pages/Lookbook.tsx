@@ -1,59 +1,75 @@
+import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const About = () => {
+const Lookbook = () => {
+  const [selectedFilter, setSelectedFilter] = useState("All");
+  const filters = ["All", "Gowns", "Sarees", "Lehengas"];
+
+  const lookbookImages = [
+    { category: "Gowns", url: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?auto=format&fit=crop&q=80" },
+    { category: "Lehengas", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80" },
+    { category: "Sarees", url: "https://images.unsplash.com/photo-1583846283882-3c5bc17419ac?auto=format&fit=crop&q=80" },
+    { category: "Gowns", url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80" },
+    { category: "Lehengas", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80" },
+    { category: "Sarees", url: "https://images.unsplash.com/photo-1583846283882-3c5bc17419ac?auto=format&fit=crop&q=80" },
+    { category: "Lehengas", url: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?auto=format&fit=crop&q=80" },
+    { category: "Gowns", url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80" },
+  ];
+
+  const filteredImages = selectedFilter === "All" 
+    ? lookbookImages 
+    : lookbookImages.filter(img => img.category === selectedFilter);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-12 text-center text-primary">About Nazara by Aisha</h1>
-          
-          <div className="space-y-16">
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-primary">Our Story</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Nazara by Aisha was born from a deep passion for preserving traditional Indian craftsmanship while 
-                creating contemporary couture for the modern woman. Founded by designer Aisha, our atelier has 
-                become synonymous with luxury, heritage, and uncompromising quality.
-              </p>
-            </div>
+        <div className="text-center mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-primary">Lookbook</h1>
+          <p className="text-lg text-muted-foreground mb-8">
+            Explore our exquisite collection of bridal wear through our editorial shoots
+          </p>
 
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-primary">The Designer</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Aisha's journey began in the heritage workshops of traditional artisans, where she learned the ancient 
-                techniques of zari work, meenakari, and hand embroidery. Today, she leads a team of master 
-                craftspeople who share her vision of creating wearable art that tells a story.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-primary">Our Craftsmanship</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Every Nazara creation requires between 300-650 hours of meticulous handwork. We use only authentic 
-                24k gold thread, the finest silks, and heritage embroidery techniques that have been passed down 
-                through generations. Our artisans are the heart of our brand, and their dedication ensures that each 
-                piece is truly one-of-a-kind.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-primary">Our Philosophy</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We believe that luxury is in the details, the time invested, and the stories woven into every thread. 
-                Sustainability and ethical practices are at our core - we work directly with artisan communities, ensuring 
-                fair wages and preserving traditional crafts for future generations.
-              </p>
-            </div>
+          {/* Filter Tabs */}
+          <div className="flex justify-center gap-8 mb-12">
+            {filters.map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setSelectedFilter(filter)}
+                className={`text-lg font-medium pb-2 transition-colors ${
+                  selectedFilter === filter
+                    ? 'text-primary border-b-2 border-primary'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {filter}
+              </button>
+            ))}
           </div>
+        </div>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {filteredImages.map((image, index) => (
+            <div
+              key={index}
+              className="aspect-[3/4] overflow-hidden rounded-lg bg-secondary/20 cursor-pointer group"
+            >
+              <img
+                src={image.url}
+                alt={`${image.category} ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12 mt-20">
+      <footer className="border-t border-border py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -105,4 +121,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Lookbook;
