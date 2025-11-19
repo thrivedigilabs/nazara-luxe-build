@@ -1,5 +1,5 @@
 const SHOPIFY_API_VERSION = '2025-07';
-const SHOPIFY_STORE_PERMANENT_DOMAIN = 'lovable-project-8fm3y.myshopify.com';
+const SHOPIFY_STORE_PERMANENT_DOMAIN = 'nazaratest2.myshopify.com';
 const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
 const SHOPIFY_STOREFRONT_TOKEN = 'ebdae1add19899aa4b5751a31fed7a62';
 
