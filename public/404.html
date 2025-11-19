@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Redirecting…</title>
+<script>
+  // change this if your repo name is different
+  const repo = '/nazara-luxe-build';
+  // full pathname e.g. /nazara-luxe-build/collections/sub
+  const fullPath = location.pathname + location.search + location.hash;
+  // convert to a hash route so client app can pick it up after loading index.html
+  // result -> /nazara-luxe-build/#/collections/sub
+  const hashPath = repo + '/#' + fullPath.replace(repo, '') ;
+  // replace so browser history doesn't keep the 404 URL
+  location.replace(hashPath);
+</script>
